@@ -1,0 +1,61 @@
+
+
+{%  extends 'accounts/main.html' %}
+
+{% load bootstrap4 %}
+{% block content %}
+
+
+
+
+
+<script src="https://kit.fontawesome.com/85493ca592.js" crossorigin="anonymous"></script>
+
+  <!-- Modal -->
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Repair Asset Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+       <div class="container">
+        
+
+          <!-- Empty div -->
+          
+          
+           
+            <div class="panel panel-default">
+      
+              <div class="panel-heading">
+                
+              </div>
+              <div class="panel-body">
+      
+                <form  action="{%url 'repairform'%}" method="post">
+                  {% csrf_token %}
+                  {% bootstrap_form form %}
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-info btn-sm" value="submit">
+                  </div>
+      
+                  
+      
+                </form>
+      
+              
+      
+            
+      
+          </div>
+          <!-- empty div -->
+          
+        </div>
+       </div>
+    </div>
+</div>
+
+{% endblock %}

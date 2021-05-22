@@ -13,13 +13,13 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #7abecc !important;
+			background: #fafdfd !important;
 		}
 		.user_card {
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #74cfbf;
+			background:white;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -37,11 +37,11 @@
 		}
 
 		#form-title{
-			color: #fff;
+			color: rgb(14, 13, 13);
 		}
 		.login_btn {
 			width: 100%;
-			background: #33ccff !important;
+			background: #f7f9fa !important;
 			color: white !important;
 		}
 		.login_btn:focus {
@@ -50,9 +50,10 @@
 		}
 		.login_container {
 			padding: 0 2rem;
+			background-attachment:blue;
 		}
 		.input-group-text {
-			background: #f7ba5b !important;
+			background:white !important;
 			color: white !important;
 			border: 0 !important;
 			border-radius: 0.25rem 0 0 0.25rem !important;
@@ -61,6 +62,9 @@
 		.input_pass:focus {
 			box-shadow: none !important;
 			outline: 0px !important;
+		}
+		#ali{
+			background-color: blue;
 		}
 
 	</style>
@@ -71,7 +75,17 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-					<h3 id="form-title">REGISTER ACCOUNT</h3>
+					<h2 id="form-title">Instagram</h2>
+
+				</div>
+				<div  class="d-flex justify-content-center">
+					<h5>Sign up to see photos and</h5>
+		
+				</div>
+				<div  class="d-flex justify-content-center">
+					<h5>videos from your friends.
+					</h5>
+		
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
@@ -79,32 +93,38 @@
 						{% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class=""><i ></i></span>
 							</div>
 							{{form.username}}
 						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class=""><i ></i></span>
+							</div>
+							{{form.is_manager}}
+						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+								<span class=""><i></i></span>
 							</div>
 							{{form.email}}
 						</div>
-						<div class="input-group mb-2">
+						<div class="input-group mb-2"></div>
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<span class=""><i ></i></span>
 							</div>
 							{{form.password1}}
-						</div>
-						<div class="input-group mb-2">
+						
+						<div class="input-group mb-3"></div>
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<span class=""><i ></i></span>
 							</div>
 							{{form.password2}}
-						</div>
+						
 
 
 
-				   		<div class="d-flex justify-content-center mt-3 login_container">
+				   		<div class="d-flex justify-content-center mt-3 login_container" id="ali">
 				 			<input class="btn login_btn" type="submit" value="Register Account">
 				   		</div>
 
@@ -116,6 +136,12 @@
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+					</div>
+				</div>
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						By signing up, you agree to our Terms 
+						
 					</div>
 				</div>
 			</div>

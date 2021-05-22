@@ -3,7 +3,34 @@
 {%  include 'accounts/status.html' %}
 
 <h3>User Profile</h3>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Customer:</h5>
+			<hr>
 
+			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Customer</a>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'create_customer_order' pk %}">Place Order</a>
+
+		</div>
+	</div>
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Email: {{customer.email}}</p>
+			<p>Phone: {{customer.phone}}</p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Total Orders</h5>
+			<hr>
+			<h1 style="text-align: center;padding: 10px">{{order_count}}</h1>
+		</div>
+	</div>
+</div>
 
 <div class="row">
 	<div class="col-md">
